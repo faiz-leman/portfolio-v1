@@ -337,14 +337,15 @@ body.light .cursor {
 
   .mobile-nav {
     display: flex;
+    flex-direction: row; /* Ensure row layout */
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Space out left, center, right */
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 56px;
     background: #121212;
-    align-items: center;
-    justify-content: space-between;
     z-index: 1001;
     padding: 0 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -354,24 +355,46 @@ body.light .cursor {
     background: #e7ecef;
   }
 
-  .mobile-nav-left .logo-img {
-    height: 36px;
+  .mobile-nav-left,
+  .mobile-nav-center,
+  .mobile-nav-right {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .mobile-nav-left {
+    flex: 0 0 auto;
   }
 
   .mobile-nav-center {
-    flex: 1;
+    flex: 1 1 auto;
+    justify-content: center;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
     color: #faf0ca;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   body.light .mobile-nav-center {
     color: #0d3b66;
   }
 
   .mobile-nav-right {
-    display: flex;
-    align-items: center;
+    flex: 0 0 auto;
+    justify-content: flex-end;
+  }
+
+  .mobile-nav-left .logo-img {
+    height: 36px;
+    width: auto;
+    display: block;
+  }
+
+  .theme-switch {
+    margin-top: 0; /* Remove margin for horizontal alignment */
   }
 
   .content {
@@ -405,6 +428,28 @@ body.light .cursor {
     transform: scale(1);
   }
 
+  body,
+  html {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 80px 8px 20px 8px;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+
+  #about,
+  #experience,
+  #project {
+    width: 100%;
+    min-width: 0;
+    padding: 56px 8px 24px 8px;
+    box-sizing: border-box;
+  }
+
   .content {
     margin-left: 0;
     padding: 80px 20px 20px;
@@ -416,5 +461,67 @@ body.light .cursor {
 
   #about p {
     font-size: 16px;
+  }
+}
+
+/* Fade-in animation for the about section */
+.animate-fade-in {
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Email link animation */
+.email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s, transform 0.2s;
+  position: relative;
+}
+
+.email-link i {
+  transition: transform 0.3s;
+}
+
+.email-link:hover,
+.email-link:focus {
+  color: #faf0ca;
+  text-decoration: underline;
+  animation: bounce 0.5s;
+}
+
+.email-link:hover i,
+.email-link:focus i {
+  transform: scale(1.2) rotate(-10deg);
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

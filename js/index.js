@@ -66,46 +66,46 @@ navLinks.forEach((link) => {
 });
 
 // Hero text typing animation
-const heroText = document.getElementById("hero-text");
-const phrases = [
-  "Hello, I am Faiz Leman.",
-  "Hai, saya Faiz Leman.",
-  "你好，我是 Faiz Leman。",
-  "வணக்கம், நான் Faiz Leman.",
-];
+// const heroText = document.getElementById("hero-text");
+// const phrases = [
+//   "Hello, I am Faiz Leman.",
+//   "Hai, saya Faiz Leman.",
+//   "你好，我是 Faiz Leman。",
+//   "வணக்கம், நான் Faiz Leman.",
+// ];
 
-let phraseIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typingSpeed = 100;
-let pauseTime = 2000;
+// let phraseIndex = 0;
+// let charIndex = 0;
+// let isDeleting = false;
+// let typingSpeed = 100;
+// let pauseTime = 2000;
 
-function type() {
-  const currentPhrase = phrases[phraseIndex];
-  if (isDeleting) {
-    charIndex--;
-  } else {
-    charIndex++;
-  }
+// function type() {
+//   const currentPhrase = phrases[phraseIndex];
+//   if (isDeleting) {
+//     charIndex--;
+//   } else {
+//     charIndex++;
+//   }
 
-  heroText.textContent = currentPhrase.substring(0, charIndex);
+//   heroText.textContent = currentPhrase.substring(0, charIndex);
 
-  if (!isDeleting && charIndex === currentPhrase.length) {
-    setTimeout(() => {
-      isDeleting = true;
-      type();
-    }, pauseTime);
-    return;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    phraseIndex = (phraseIndex + 1) % phrases.length;
-  }
+//   if (!isDeleting && charIndex === currentPhrase.length) {
+//     setTimeout(() => {
+//       isDeleting = true;
+//       type();
+//     }, pauseTime);
+//     return;
+//   } else if (isDeleting && charIndex === 0) {
+//     isDeleting = false;
+//     phraseIndex = (phraseIndex + 1) % phrases.length;
+//   }
 
-  const delay = isDeleting ? typingSpeed / 2 : typingSpeed;
-  setTimeout(type, delay);
-}
+//   const delay = isDeleting ? typingSpeed / 2 : typingSpeed;
+//   setTimeout(type, delay);
+// }
 
-type();
+// type();
 
 // Scroll to top button
 const scrollToTopBtn = document.getElementById("scrollToTop");
