@@ -17,9 +17,3 @@
         <a href="#hero" class="text-muted small">Back to top ↑</a>
     </div>
 </footer> -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/index.js"></script>
-</body>
-
-</html>
