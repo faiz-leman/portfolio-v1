@@ -102,6 +102,10 @@ body {
   transition: transform 0.3s ease;
 }
 
+.side-nav a.logo-link::after {
+  display: none;
+}
+
 .side-nav a:hover {
   color: #fff;
 }
@@ -267,7 +271,9 @@ body.light .cursor {
 }
 
 /* Hero section full width with contrast background */
+#home,
 #about,
+#skills,
 #experience,
 #project {
   width: 100vw;
@@ -280,14 +286,18 @@ body.light .cursor {
   padding: 60px 20px;
 }
 
+#home,
 #about,
+#skills,
 #experience,
 #project h1 {
   font-size: 48px;
   margin-bottom: 20px;
 }
 
+#home,
 #about,
+#skills,
 #experience,
 #project p {
   font-size: 18px;
@@ -524,4 +534,57 @@ body.light .cursor {
   100% {
     transform: translateY(0);
   }
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Use center for horizontal centering */
+  min-height: 100vh;
+  padding: 0 0 0 0; /* Remove extra padding if needed */
+}
+
+.hero-content {
+  max-width: 600px;
+  width: 100%;
+  padding: 48px 32px;
+  background: rgba(
+    18,
+    18,
+    18,
+    0.85
+  ); /* Optional: subtle background for contrast */
+  border-radius: 16px;
+  box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.08);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+}
+
+.hero-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+  font-weight: 400;
+  color: #ccc;
+}
+
+.hero-content h2 strong {
+  color: #faf0ca;
+  font-weight: 700;
+}
+
+.hero-content h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 0;
+  color: #faf0ca;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  flex-wrap: wrap;
 }
