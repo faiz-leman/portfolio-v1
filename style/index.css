@@ -26,6 +26,25 @@ body {
   animation: moveGrid 10s linear infinite;
   position: relative;
   overflow-x: hidden;
+  line-height: 1.5;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+body.light {
+  height: 100vh;
+  background-color: #ebebeb;
+  background-image: linear-gradient(
+      to right,
+      rgba(13, 59, 102, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(13, 59, 102, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0;
+  animation: moveGrid 10s linear infinite;
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.5;
 }
 
 /* =========================
@@ -61,6 +80,22 @@ body {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
+.cursor.light {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.15s ease-out, opacity 0.2s, box-shadow 0.2s;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  box-shadow: 0 0 8px rgba(32, 32, 32, 0.3);
+}
+
 /* =========================
    SIDE NAVIGATION
    ========================= */
@@ -89,6 +124,17 @@ body {
   transition: color 0.3s ease;
 }
 
+body.light .side-nav a {
+  position: relative;
+  color: #264653;
+  text-decoration: none;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
 .side-nav a::after {
   content: "";
   position: absolute;
@@ -102,6 +148,19 @@ body {
   transition: transform 0.3s ease;
 }
 
+body.light .side-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #2a9d8f;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
 .side-nav a.logo-link::after {
   display: none;
 }
@@ -110,14 +169,25 @@ body {
   color: #fff;
 }
 
+.side-nav a.active {
+  color: #faf0ca;
+}
+
+body.light .side-nav a:hover,
+body.light .side-nav a:active {
+  color: #2a9d8f;
+}
+
 .side-nav a:hover::after,
 .side-nav a.active::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-.side-nav a.active {
-  color: #faf0ca;
+body.light .side-nav a:hover::after,
+body.light .side-nav a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 /* =========================
@@ -163,6 +233,10 @@ body {
   background: #ffd600;
 }
 
+body.light .theme-switch input:checked + .slider {
+  background: #0d1b2a;
+}
+
 .theme-switch input:checked + .slider::before {
   transform: translateX(18px);
 }
@@ -173,19 +247,19 @@ body {
 }
 
 #sunIcon {
-  color: #ffd600;
+  color: #ccc;
 }
 
 #moonIcon {
-  color: #222;
+  color: #ccc;
 }
 
 body.light #moonIcon {
-  color: #bbb;
+  color: #0d1b2a;
 }
 
-body:not(.light) #sunIcon {
-  color: #bbb;
+body.light #sunIcon {
+  color: #0d1b2a;
 }
 
 /* =========================
@@ -214,48 +288,28 @@ body.light .theme-toggle:hover {
 }
 
 /* =========================
-   LIGHT THEME OVERRIDES
-   ========================= */
-body.light {
-  background-color: #e7ecef;
-  background-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.05) 1px,
-      transparent 1px
-    ),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-}
-
-body.light .side-nav a {
-  color: #0d3b66;
-}
-
-body.light .side-nav a:hover {
-  color: #0d3b66;
-  opacity: 0.8;
-}
-
-body.light .side-nav a.active {
-  color: #0d3b66;
-}
-
-body.light .side-nav a::after {
-  background-color: #0d3b66;
-}
-
-body.light .cursor {
-  border-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-}
-
-/* =========================
    CONTENT & SECTIONS
    ========================= */
 .content {
   margin-left: 100px;
   padding: 50px;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
+  color: #ccc;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 200;
+}
+
+.content strong {
+  color: #faf0ca;
+  font-family: "Fugaz One", sans-serif;
+}
+
+body.light .content {
+  color: #415a77;
+}
+
+body.light .content strong {
+  color: #264653;
+  font-family: "Fugaz One", sans-serif;
 }
 
 .section {
@@ -301,9 +355,8 @@ body.light .cursor {
 #experience,
 #project p {
   font-size: 18px;
-  max-width: 600px;
+  max-width: 850px;
   line-height: 1.6;
-  color: #ccc;
 }
 
 /* =========================
@@ -490,12 +543,99 @@ body.light .cursor {
   }
 }
 
-/* Email link animation */
+/* =========================
+   HERO SECTION
+   ========================= */
+/* HERO SECTION: Full viewport, centered, no background */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 0 0 120px; /* leave space for side nav */
+  background: none;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  max-width: 1080px;
+  width: 100%;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: flex-start; /* left align */
+  height: 60vh; /* fill parent height for vertical centering */
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.hero-content h2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.hero-content h2 strong {
+  font-weight: 700;
+}
+
+.hero-content h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+/* for title animation */
+#hero-title .char {
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.email-link {
+  color: #faf0ca;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.email-link:hover {
+  color: #ffd600;
+}
+
+body.light .email-link {
+  color: #264653;
+}
+
+body.light .email-link:hover {
+  color: #2a9d8f;
+}
+
 .email-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  color: #ffffff;
+  color: #faf0ca;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s, transform 0.2s;
@@ -536,55 +676,12 @@ body.light .cursor {
   }
 }
 
-/* =========================
-   HERO SECTION
-   ========================= */
-.hero-section {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* Use center for horizontal centering */
-  min-height: 100vh;
-  padding: 0 0 0 0; /* Remove extra padding if needed */
-}
-
-.hero-content {
-  max-width: 600px;
-  width: 100%;
-  padding: 48px 32px;
-  background: rgba(
-    18,
-    18,
-    18,
-    0.85
-  ); /* Optional: subtle background for contrast */
-  border-radius: 16px;
-  box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.08);
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5em;
-}
-
-.hero-content h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1em;
-  font-weight: 400;
-  color: #ccc;
-}
-
-.hero-content h2 strong {
-  color: #faf0ca;
-  font-weight: 700;
-}
-
-.hero-content h3 {
-  font-size: 1.1rem;
-  font-weight: 400;
-  margin-bottom: 0;
-  color: #faf0ca;
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  flex-wrap: wrap;
+@media (max-width: 900px) {
+  .hero-section {
+    padding: 0 24px;
+  }
+  .hero-content h1,
+  .hero-content h2 {
+    font-size: 2rem;
+  }
 }

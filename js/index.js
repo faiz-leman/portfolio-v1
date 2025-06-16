@@ -211,3 +211,48 @@ if (mobileThemeToggle) {
     updateMobileLogo();
   });
 }
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Only target the h2 headline
+//   const heroTitle = document.getElementById("hero-title");
+//   if (!heroTitle) return;
+
+//   function wrapCharacters(element) {
+//     let html = "";
+//     element.childNodes.forEach((node) => {
+//       if (node.nodeType === Node.TEXT_NODE) {
+//         node.textContent.split("").forEach((char) => {
+//           html += `<span class="char">${char === " " ? "&nbsp;" : char}</span>`;
+//         });
+//       } else if (node.nodeType === Node.ELEMENT_NODE) {
+//         html += `<${node.tagName.toLowerCase()}>${wrapCharacters(
+//           node
+//         )}</${node.tagName.toLowerCase()}>`;
+//       }
+//     });
+//     return html;
+//   }
+
+//   heroTitle.innerHTML = wrapCharacters(heroTitle);
+
+//   const chars = heroTitle.querySelectorAll(".char");
+//   const section = document.getElementById("home");
+
+//   window.addEventListener("scroll", function () {
+//     const rect = section.getBoundingClientRect();
+//     const windowHeight = window.innerHeight;
+//     let progress = 1 - Math.max(0, rect.top) / windowHeight;
+//     progress = Math.max(0, Math.min(1, progress));
+
+//     chars.forEach((span, i) => {
+//       const charProgress = (i + 1) / chars.length;
+//       if (progress > charProgress) {
+//         span.style.color = "#00bfff";
+//         span.style.transition = "color 0.3s";
+//       } else {
+//         span.style.color = "#888";
+//         span.style.transition = "color 0.3s";
+//       }
+//     });
+//   });
+// });
