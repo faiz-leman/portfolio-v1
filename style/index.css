@@ -100,6 +100,84 @@ body.light {
   box-shadow: 0 0 8px rgba(32, 32, 32, 0.3);
 }
 
+.contact-form {
+  max-width: 900px;
+}
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.contact-form .inline-label {
+  display: inline;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #6c6f8a;
+  color: #fff;
+  font-size: 1em;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  outline: none;
+}
+
+.contact-form select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #6c6f8a;
+  color: #fff;
+  font-size: 1em;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  outline: none;
+}
+
+.contact-form select:focus {
+  border-color: #7df9ff;
+  box-shadow: 0 0 0 3px rgba(125, 249, 255, 0.3); /* Glow effect */
+  background-color: #23253a;
+  color: #fff;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #6c6f8a;
+  opacity: 1;
+}
+.contact-form select {
+  color: #fff;
+}
+.contact-form .row {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+.contact-form .row > div {
+  flex: 1;
+}
+.contact-form button {
+  background: #6c6f8a;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1em;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.contact-form .desc {
+  font-size: 0.95em;
+  color: #b0b3c6;
+  margin-bottom: 10px;
+}
+
 /* =========================
    SIDE NAVIGATION
    ========================= */
@@ -317,7 +395,7 @@ body.light .content strong {
 }
 
 .section {
-  margin-bottom: 100vh;
+  /* margin-bottom: 100vh; */
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -333,8 +411,9 @@ body.light .content strong {
 #about,
 #skills,
 #experience,
-#project {
-  width: 100vw;
+#project,
+#contact {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -348,7 +427,8 @@ body.light .content strong {
 #about,
 #skills,
 #experience,
-#project h1 {
+#project,
+#contact h1 {
   font-size: 48px;
   margin-bottom: 20px;
 }
@@ -357,7 +437,8 @@ body.light .content strong {
 #about,
 #skills,
 #experience,
-#project p {
+#project,
+#contact p {
   font-size: 25px;
   max-width: 1050px;
   line-height: 1.5;
@@ -373,12 +454,14 @@ body.light .content strong {
 #about ul,
 #skills ul,
 #experience ul,
+#contact ul,
 #project ul,
 #home ol,
 #about ol,
 #skills ol,
 #experience ol,
-#project ol {
+#project ol,
+#contact ol {
   list-style: none;
   padding-left: 0;
   margin-left: 0;
@@ -392,7 +475,8 @@ body.light .content strong {
 #about li,
 #skills li,
 #experience li,
-#project li {
+#project li,
+#contact li {
   font-size: 25px;
   max-width: 1050px;
   line-height: 1.5;
@@ -402,7 +486,8 @@ body.light .content strong {
 }
 
 #experience ul li,
-#project ul li {
+#project ul li,
+#contact ul li {
   transition: background 0.4s, box-shadow 0.4s, backdrop-filter 0.4s;
   border-radius: 12px;
   position: relative;
@@ -411,7 +496,8 @@ body.light .content strong {
 }
 
 #experience ul li:hover,
-#project ul li:hover {
+#project ul li:hover,
+#contact ul li:hover {
   background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
   -webkit-backdrop-filter: blur(12px);
@@ -422,31 +508,37 @@ body.light .content strong {
 }
 
 #experience ul li .exp-arrow,
-#project ul li .exp-arrow {
+#project ul li .exp-arrow,
+#contact ul li .exp-arrow {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s;
 }
 
 #experience ul li:hover .exp-arrow,
-#project ul li:hover .exp-arrow {
+#project ul li:hover .exp-arrow,
+#contact ul li:hover .exp-arrow {
   transform: translateX(10px) scale(1.2) rotate(15deg);
   color: #faf0ca;
 }
 
 #experience a:hover .exp-arrow,
-#project ul li:hover .exp-arrow {
+#project ul li:hover .exp-arrow,
+#contact ul li:hover .exp-arrow {
   transform: translateX(10px) scale(1.2) rotate(15deg);
   color: #faf0ca;
 }
 
 #experience ul li:hover h3,
-#project ul li:hover h3 {
+#project ul li:hover h3,
+#contact ul li:hover h3 {
   color: #faf0ca;
 }
 
 #experience ul li:hover p,
 #project ul li:hover p,
 #experience ul li:hover span.badge,
-#project ul li:hover span.badge {
+#project ul li:hover span.badge,
+#contact ul li:hover p,
+#contact ul li:hover span.badge {
   color: #fff;
 }
 
@@ -488,8 +580,6 @@ body.light .content strong {
 .exp-resume-link:focus .exp-arrow {
   transform: translateX(8px) scale(1.2) rotate(15deg);
 }
-
-/* ...existing code... */
 
 /* =========================
    SCROLL TO TOP BUTTON
@@ -659,20 +749,68 @@ body.light .content strong {
   }
 }
 
-/* Fade-in animation for the about section */
-.animate-fade-in {
-  animation: fadeInUp 1s ease;
+/* Extra small devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 0 8px;
+  }
+  .hero-content h1,
+  .hero-content h2 {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .hero-content h3 {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  .content {
+    padding: 60px 4px 10px 4px;
+  }
+  #home li,
+  #about li,
+  #skills li,
+  #experience li,
+  #project li,
+  #contact li {
+    padding: 12px;
+    font-size: 1rem;
+  }
+  #home p,
+  #about p,
+  #skills p,
+  #experience p,
+  #project p,
+  #contact p {
+    font-size: 1rem;
+  }
+  .project-content img,
+  .experience-content img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+  .footer {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .social-links-row {
+    justify-content: center;
+    gap: 16px;
+    font-size: 2rem;
+  }
+  .contact-form .row {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Make images responsive in project/experience */
+.project-content img,
+.experience-content img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 /* =========================
@@ -790,6 +928,26 @@ body.light .email-link:hover {
   transform: scale(1.2) rotate(-10deg);
 }
 
+.social-links-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 24px;
+  margin-top: 24px;
+  padding-left: 0;
+}
+.social-links-row a {
+  color: #333;
+  font-size: 3rem;
+  transition: color 0.2s;
+}
+.social-links-row a:hover {
+  color: #faf0ca;
+}
+
+body.light .social-links-row a:hover {
+  color: #2a9d8f;
+}
+
 @keyframes bounce {
   0% {
     transform: translateY(0);
@@ -816,4 +974,18 @@ body.light .email-link:hover {
   .hero-content h2 {
     font-size: 2rem;
   }
+}
+
+/* =========================
+   SCROLL REVEAL ANIMATION
+   ========================= */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

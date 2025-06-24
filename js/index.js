@@ -24,7 +24,7 @@ animate();
 
 // Highlight nav + fade sections
 const sections = document.querySelectorAll(".section");
-const navLinks = document.querySelectorAll(".side-nav a");
+const navLinks = document.querySelectorAll(".side-nav a, .social-links-row a");
 
 window.addEventListener("scroll", () => {
   let current = "";
