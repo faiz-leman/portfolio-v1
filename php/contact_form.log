@@ -1,0 +1,34 @@
+[2025-07-15 17:15:53] [REQUEST] [IP: ::1] New request received - Method: POST
+[2025-07-15 17:15:53] [SUBMISSION] [IP: ::1] Form submission attempt - Data: {"name":"PROVIDED","email":"PROVIDED","project":"web","phone":"PROVIDED","details":"PROVIDED"}
+[2025-07-15 17:15:53] [USER_AGENT] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+[2025-07-15 17:15:53] [VALIDATION_SUCCESS] [IP: ::1] Validation passed for submission from: gyluqaxas@mailinator.com
+[2025-07-15 17:15:53] [EMAIL_ATTEMPT] [IP: ::1] Attempting to send email to: flmuhdfaiz@gmail.com from: gyluqaxas@mailinator.com
+[2025-07-15 17:15:56] [EMAIL_FAILURE] [IP: ::1] Email sending failed - Error: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() - To: flmuhdfaiz@gmail.com From: gyluqaxas@mailinator.com
+[2025-07-15 17:15:56] [EXCEPTION] [IP: ::1] Exception caught: Failed to send email. Please try again later. - File: C:\xampp\htdocs\portfolio-v1\php\email.php - Line: 99
+[2025-07-15 17:15:56] [REQUEST_END] [IP: ::1] Request processing completed
+[2025-07-15 17:15:56] [SEPARATOR] [IP: ::1] --- End of Request ---
+[2025-07-15 17:18:15] [REQUEST] [IP: ::1] New request received - Method: POST
+[2025-07-15 17:18:15] [SUBMISSION] [IP: ::1] Form submission attempt - Data: {"name":"PROVIDED","email":"PROVIDED","project":"design","phone":"PROVIDED","details":"PROVIDED"}
+[2025-07-15 17:18:15] [USER_AGENT] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+[2025-07-15 17:18:15] [VALIDATION_SUCCESS] [IP: ::1] Validation passed for submission from: gete@mailinator.com
+[2025-07-15 17:18:15] [EMAIL_ATTEMPT] [IP: ::1] Attempting to send email to: flmuhdfaiz@gmail.com from: gete@mailinator.com
+[2025-07-15 17:18:17] [EMAIL_FAILURE] [IP: ::1] Email sending failed - Error: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() - To: flmuhdfaiz@gmail.com From: gete@mailinator.com
+[2025-07-15 17:18:17] [EXCEPTION] [IP: ::1] Exception caught: Failed to send email. Please try again later. - File: C:\xampp\htdocs\portfolio-v1\php\email.php - Line: 99
+[2025-07-15 17:18:17] [REQUEST_END] [IP: ::1] Request processing completed
+[2025-07-15 17:18:17] [SEPARATOR] [IP: ::1] --- End of Request ---
+[2025-07-15 17:23:27] [REQUEST] [IP: ::1] New request received - Method: POST
+[2025-07-15 17:23:27] [SUBMISSION] [IP: ::1] Form submission attempt - Data: {"name":"PROVIDED","email":"PROVIDED","project":"other","phone":"PROVIDED","details":"PROVIDED"}
+[2025-07-15 17:23:27] [USER_AGENT] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+[2025-07-15 17:23:27] [VALIDATION_SUCCESS] [IP: ::1] Validation passed for submission from: cityfi@mailinator.com
+[2025-07-15 17:23:27] [EMAIL_ATTEMPT] [IP: ::1] Attempting to send email via PHPMailer to: flmuhdfaiz@gmail.com from: cityfi@mailinator.com
+[2025-07-15 17:23:37] [EMAIL_SUCCESS] [IP: ::1] Email sent successfully via PHPMailer to: flmuhdfaiz@gmail.com from: cityfi@mailinator.com (Project: other)
+[2025-07-15 17:23:37] [REQUEST_END] [IP: ::1] Request processing completed
+[2025-07-15 17:23:37] [SEPARATOR] [IP: ::1] --- End of Request ---
+[2025-07-15 17:24:25] [REQUEST] [IP: ::1] New request received - Method: POST
+[2025-07-15 17:24:25] [SUBMISSION] [IP: ::1] Form submission attempt - Data: {"name":"PROVIDED","email":"PROVIDED","project":"other","phone":"PROVIDED","details":"PROVIDED"}
+[2025-07-15 17:24:25] [USER_AGENT] Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+[2025-07-15 17:24:25] [VALIDATION_SUCCESS] [IP: ::1] Validation passed for submission from: flmuhdfaiz@gmail.com
+[2025-07-15 17:24:25] [EMAIL_ATTEMPT] [IP: ::1] Attempting to send email via PHPMailer to: flmuhdfaiz@gmail.com from: flmuhdfaiz@gmail.com
+[2025-07-15 17:24:31] [EMAIL_SUCCESS] [IP: ::1] Email sent successfully via PHPMailer to: flmuhdfaiz@gmail.com from: flmuhdfaiz@gmail.com (Project: other)
+[2025-07-15 17:24:31] [REQUEST_END] [IP: ::1] Request processing completed
+[2025-07-15 17:24:31] [SEPARATOR] [IP: ::1] --- End of Request ---
