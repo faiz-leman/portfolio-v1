@@ -161,3 +161,61 @@ if (mobileThemeToggle) {
     updateMobileLogo();
   });
 }
+
+// Initialize sections visibility on mobile
+function initializeMobileSections() {
+  if (window.innerWidth <= 768) {
+    const sections = document.querySelectorAll(".section");
+    sections.forEach((section) => {
+      section.classList.add("visible");
+      section.style.opacity = "1";
+      section.style.transform = "translateY(0)";
+    });
+  }
+}
+
+// Call on load and resize
+window.addEventListener("load", initializeMobileSections);
+window.addEventListener("resize", initializeMobileSections);
+
+// Mobile scrollspy functionality
+function updateMobileScrollspy() {
+  const sections = document.querySelectorAll("section[id]");
+  const mobileScrollspy = document.getElementById("mobile-scrollspy");
+
+  if (!mobileScrollspy) return;
+
+  let currentSection = "About"; // default
+
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    const sectionTop = rect.top;
+    const sectionHeight = rect.height;
+
+    // Check if section is in viewport (with offset for mobile nav)
+    if (sectionTop <= 100 && sectionTop + sectionHeight > 100) {
+      const sectionId = section.getAttribute("id");
+      switch (sectionId) {
+        case "home":
+        case "about":
+          currentSection = "About";
+          break;
+        case "experience":
+          currentSection = "Experience";
+          break;
+        case "project":
+          currentSection = "Project";
+          break;
+        case "contact":
+          currentSection = "Contact";
+          break;
+      }
+    }
+  });
+
+  mobileScrollspy.textContent = currentSection;
+}
+
+// Add scroll listener for mobile scrollspy
+window.addEventListener("scroll", updateMobileScrollspy);
+window.addEventListener("load", updateMobileScrollspy);
