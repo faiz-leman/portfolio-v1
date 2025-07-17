@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     console.log("Form data being sent:", formDataObject);
 
-    fetch("php/email.php", {
+    fetch("https://email-notification.fwh.is/php/email.php", {
       method: "POST",
       body: formData,
     })
