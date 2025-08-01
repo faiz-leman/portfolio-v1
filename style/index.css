@@ -493,6 +493,26 @@ body.light .content strong {
   cursor: pointer;
 }
 
+/* Experience & Project Card Hover - Light Mode */
+body.light #experience ul li:hover,
+body.light #project ul li:hover {
+  background: #23253a !important; /* dark background */
+  color: var(--text-white) !important;
+  border: 1px solid #23253a !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+/* Badge Pill Hover - Light Mode */
+body.light #experience ul li:hover .badge,
+body.light #project ul li:hover .badge {
+  background-color: var(--text-accent-light) !important;
+  color: var(--text-white) !important;
+  transform: translateY(-1px);
+}
+
 #experience ul li .exp-arrow,
 #project ul li .exp-arrow,
 #contact ul li .exp-arrow {
@@ -554,7 +574,18 @@ body.light .content strong {
 .exp-resume-link:hover,
 .exp-resume-link:focus {
   color: var(--text-white);
-  text-shadow: 0 0 8px var(--text-accent-dark);
+  text-shadow: 0 0 8px var(--text-accent-light);
+}
+
+body.light .exp-resume-link {
+  color: var(--text-accent-light);
+  text-shadow: none;
+}
+
+body.light .exp-resume-link:hover,
+body.light .exp-resume-link:focus {
+  color: var(--text-white);
+  text-shadow: 0 0 8px var(--text-accent-light);
 }
 
 .exp-resume-link .exp-arrow {
@@ -1166,304 +1197,6 @@ body.light .bg-secondary-dark {
 #project ul li:hover .badge {
   background-color: var(--text-accent-dark) !important;
   color: var(--bg-primary-dark) !important;
-  transform: translateY(-1px);
-}
-
-body.light #experience ul li:hover .badge,
-body.light #project ul li:hover .badge {
-  background-color: var(--text-white) !important;
-  color: var(--text-accent-light) !important;
-}
-
-/* =========================
-   RESPONSIVE - MOBILE
-   ========================= */
-@media (max-width: 768px) {
-  .cursor {
-    display: none;
-  }
-
-  body,
-  html {
-    width: 100vw;
-    overflow-x: hidden;
-  }
-
-  .content {
-    margin-left: 0;
-    padding: 70px var(--mobile-padding) var(--mobile-padding)
-      var(--mobile-padding);
-    max-width: 100vw;
-    box-sizing: border-box;
-    display: block;
-  }
-
-  .section {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-
-  #home,
-  #about,
-  #experience,
-  #project,
-  #contact {
-    width: 100%;
-    min-width: 0;
-    padding: var(--mobile-padding) 0;
-    box-sizing: border-box;
-    display: block;
-    opacity: 1;
-    transform: none;
-    min-height: 0;
-  }
-
-  /* Fix for hero section spacing on mobile */
-  #home {
-    padding-top: 0;
-    min-height: calc(100vh - var(--mobile-nav-height));
-  }
-
-  #about {
-    margin-top: 2rem;
-    padding-top: 2rem;
-  }
-
-  /* Hero section mobile */
-  .hero-section {
-    padding: 0 var(--mobile-padding);
-    min-height: calc(100vh - var(--mobile-nav-height));
-    margin-top: var(--mobile-nav-height);
-  }
-
-  .hero-content {
-    height: auto;
-    text-align: center;
-    align-items: center;
-    padding-top: 2rem;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-content h2 {
-    font-size: 2rem;
-    line-height: 1.3;
-  }
-
-  .hero-content h3 {
-    font-size: 1.2rem;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .social-links-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 2rem auto 0;
-    padding: 0;
-  }
-
-  .social-links-row a {
-    font-size: 2.5rem;
-  }
-
-  /* Project layout mobile */
-  #experience .row,
-  #project .row {
-    flex-direction: column;
-  }
-
-  #experience .col-md-4,
-  #experience .col-md-8,
-  #project .col-md-4,
-  #project .col-md-8 {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  #project .col-md-4 {
-    margin-bottom: 1rem;
-  }
-
-  #project img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0;
-    display: block;
-  }
-
-  /* Contact form mobile */
-  .contact-form {
-    max-width: 100%;
-  }
-
-  .contact-form .row {
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form select {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-
-  .contact-form label {
-    font-size: 1rem;
-    margin-bottom: 5px;
-  }
-
-  /* Footer mobile */
-  .footer {
-    text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 2rem;
-  }
-
-  .footer p {
-    font-size: 0.85rem;
-    margin-bottom: 0.3rem;
-  }
-}
-
-/* =========================
-   RESPONSIVE - SMALL MOBILE
-   ========================= */
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-content h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero-content h3 {
-    font-size: 1rem;
-    gap: 0.3rem;
-  }
-
-  .content {
-    padding: 60px var(--mobile-padding) 10px var(--mobile-padding);
-  }
-
-  #home li,
-  #about li,
-  #skills li,
-  #experience li,
-  #project li,
-  #contact li {
-    padding: 12px;
-    font-size: 1rem;
-  }
-
-  #home p,
-  #about p,
-  #skills p,
-  #experience p,
-  #project p,
-  #contact p {
-    font-size: 1rem;
-  }
-
-  #home h1,
-  #about h1,
-  #skills h1,
-  #experience h1,
-  #project h1,
-  #contact h1 {
-    font-size: 2rem;
-  }
-
-  #experience ul li,
-  #project ul li {
-    padding: 16px;
-    font-size: 0.9rem;
-    margin-left: 0;
-  }
-
-  #experience h3,
-  #project h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .badge {
-    font-size: 0.7rem;
-    margin: 2px;
-  }
-
-  .social-links-row {
-    justify-content: center;
-    gap: 16px;
-    font-size: 2rem;
-    width: 100%;
-    padding: 0;
-    margin: 0 auto;
-  }
-
-  .contact-form {
-    padding: 0 10px;
-  }
-
-  .contact-form button {
-    width: 100%;
-    padding: 15px;
-    font-size: 1rem;
-  }
-
-  .footer {
-    padding: 1rem 0;
-    margin-top: 1.5rem;
-  }
-
-  .footer p {
-    font-size: 0.8rem;
-  }
-}
-
-/* =========================
-   BADGE STYLES
-   ========================= */
-.badge {
-  display: inline-block;
-  padding: 0.35em 0.65em;
-  font-size: 0.75em;
-  font-weight: 500;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: 0.375rem;
-  margin: 2px 4px;
-  transition: all var(--transition-fast);
-}
-
-.bg-secondary-dark {
-  background-color: var(--bg-secondary-dark) !important;
-  color: #333 !important;
-}
-
-body.light .bg-secondary-dark {
-  background-color: var(--text-accent-light) !important;
-  color: var(--text-white) !important;
-}
-
-/* Badge hover effects */
-#experience ul li:hover .badge,
-#project ul li:hover .badge {
-  background-color: var(--text-accent-dark) !important;
-  color: var(--bg-primary-dark) !important;
-  transform: translateY(-1px);
 }
 
 body.light #experience ul li:hover .badge,
