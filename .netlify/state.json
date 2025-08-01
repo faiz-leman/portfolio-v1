@@ -1,0 +1,14 @@
+{
+	"geolocation": {
+		"data": {
+			"country": {
+				"code": "MY",
+				"name": "Malaysia"
+			},
+			"timezone": "Asia/Kuching",
+			"latitude": 2.5,
+			"longitude": 112.5
+		},
+		"timestamp": 1754059035207
+	}
+}
